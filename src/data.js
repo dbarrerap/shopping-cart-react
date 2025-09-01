@@ -1,0 +1,50 @@
+export const data = [
+    {
+        "id": 1,
+        "name": "React T-Shirt",
+        "price": 25.99,
+        "description": "A comfortable and stylish T-shirt with the React logo. Perfect for developers.",
+        "category": "Apparel",
+        "image": "https://placehold.co/150/24f355/ffffff?text=React"
+    },
+    {
+        "id": 2,
+        "name": "Vue.js Mug",
+        "price": 15.50,
+        "description": "Start your day with a coffee in this cool Vue.js mug.",
+        "category": "Accessories",
+        "image": "https://placehold.co/150/42b883/ffffff?text=Vue"
+    },
+    {
+        "id": 3,
+        "name": "Angular Hoodie",
+        "price": 45.00,
+        "description": "Stay warm and show your love for Angular with this cozy hoodie.",
+        "category": "Apparel",
+        "image": "https://placehold.co/150/dd1b16/ffffff?text=Angular"
+    },
+    {
+        "id": 4,
+        "name": "JavaScript Sticker Pack",
+        "price": 5.00,
+        "description": "Decorate your laptop with these high-quality JavaScript stickers.",
+        "category": "Accessories",
+        "image": "https://placehold.co/150/f0db4f/000000?text=JS"
+    },
+    {
+        "id": 5,
+        "name": "Node.js Water Bottle",
+        "price": 20.00,
+        "description": "Stay hydrated while coding with this Node.js branded water bottle.",
+        "category": "Accessories",
+        "image": "https://placehold.co/150/68a063/ffffff?text=Node"
+    },
+    {
+        "id": 6,
+        "name": "CSS Is Awesome Cap",
+        "price": 18.75,
+        "description": "A stylish cap to show your appreciation for the magic of CSS.",
+        "category": "Apparel",
+        "image": "https://placehold.co/150/2965f1/ffffff?text=CSS"
+    }
+]
