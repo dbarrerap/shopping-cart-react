@@ -44,7 +44,7 @@ El proyecto sigue una estructura de carpetas modular y organizada para promover 
 │    ├─── contexts/
 │    │    ├─── CartContext.js
 │    │    └─── CartProvider.jsx
-│    ├─── data.js
+│    ├─── data.json
 │    ├─── App.jsx
 │    ├─── main.jsx
 │    └─── ...

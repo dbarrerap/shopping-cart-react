@@ -1,8 +1,10 @@
 import { FaCartShopping } from 'react-icons/fa6'
 import {Cart} from "./Cart.jsx";
 import {useState} from "react";
+import {useCart} from "../contexts/CartProvider.jsx";
 export const Header = () => {
     const [showCart, setShowCart] = useState(false);
+    const { state } = useCart()
 
     const toggleCart = () => {
         setShowCart(!showCart);
@@ -15,7 +17,7 @@ export const Header = () => {
                 <div className="dropdown">
                     <button className="btn dropdown-toggle btn-outline-secondary" onClick={toggleCart}>
                         <FaCartShopping size={20} />
-                        <span className="ms-2">Carrito</span>
+                        <span className="ms-2">Carrito ({ state.cartItems.reduce((acc, curr) => acc + curr.quantity, 0) })</span>
                     </button>
                     <div className={`dropdown-menu p-3 ${showCart ? 'show' : ''}`} style={{width: '350px'}}>
                         <Cart />

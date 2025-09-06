@@ -1,5 +1,6 @@
 import {CartContext} from "./CartContext.js";
-import {useReducer} from "react";
+import {useContext, useEffect, useReducer, useState} from "react";
+import axios from "axios";
 
 export const CartProvider = ({ children }) => {
     const initialState = {
@@ -78,10 +79,39 @@ export const CartProvider = ({ children }) => {
     }
 
     const [state, dispatch] = useReducer(cartReducer, initialState)
+    const [products, setProducts] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    const [hasError, setHasError] = useState(null)
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await axios.get('http://localhost:3000/products')
+                setProducts(response.data)
+            } catch (error) {
+                setHasError(error)
+            } finally {
+                setIsLoading(false)
+            }
+        }
+
+        fetchProducts();
+    }, [])
 
     return (
-        <CartContext.Provider value={{state, dispatch}}>
+        <CartContext.Provider value={{state, dispatch, products, isLoading, hasError}}>
             {children}
         </CartContext.Provider>
     )
+}
+
+// Custom Hook
+export const useCart = () => {
+    const context = useContext(CartContext)
+
+    if (context === undefined) {
+        throw new Error("useCart debe ser usado dento de CartProvider")
+    }
+
+    return context;
 }
