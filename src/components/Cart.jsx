@@ -1,10 +1,9 @@
-import {useContext} from "react";
-import {CartContext} from "../contexts/CartContext.js";
 import {CartItem} from "./CartItem.jsx";
 import { FaTrashCan } from 'react-icons/fa6'
+import {useCart} from "../contexts/CartProvider.jsx";
 
 export const Cart = () => {
-    const {state, dispatch} = useContext(CartContext)
+    const {state, dispatch} = useCart()
     return (
         <>
             <div className="list-group">

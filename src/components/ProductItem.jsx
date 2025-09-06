@@ -1,8 +1,7 @@
-import {useContext} from "react";
-import {CartContext} from "../contexts/CartContext.js";
+import {useCart} from "../contexts/CartProvider.jsx";
 
 export const ProductItem = ({product}) => {
-    const { dispatch } = useContext(CartContext);
+    const { dispatch } = useCart()
 
     return (
         <div className="col">
