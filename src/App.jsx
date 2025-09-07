@@ -2,6 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 
 import {Header, ProductList} from './components'
+import {Route, Routes} from "react-router-dom";
+import {ProductDetail} from "./components/ProductDetail.jsx";
 
 function App() {
 
@@ -9,7 +11,10 @@ function App() {
     <>
         <Header />
         <div className="container">
-            <ProductList />
+            <Routes>
+                <Route path="/" element={<ProductList />} />
+                <Route path="/product/:id" element={<ProductDetail />} />
+            </Routes>
         </div>
     </>
   )
