@@ -6,7 +6,8 @@
         "price": 25.99,
         "description": "A comfortable and stylish T-shirt with the React logo. Perfect for developers.",
         "category": "Apparel",
-        "image": "https://placehold.co/150/24f355/ffffff?text=React"
+        "image": "https://placehold.co/150/24f355/ffffff?text=React",
+        "image_full": "https://placehold.co/700/24f355/ffffff?text=React"
     },
     {
         "id": 2,
@@ -14,7 +15,8 @@
         "price": 15.50,
         "description": "Start your day with a coffee in this cool Vue.js mug.",
         "category": "Accessories",
-        "image": "https://placehold.co/150/42b883/ffffff?text=Vue"
+        "image": "https://placehold.co/150/42b883/ffffff?text=Vue",
+        "image_full": "https://placehold.co/700/42b883/ffffff?text=Vue"
     },
     {
         "id": 3,
@@ -22,7 +24,8 @@
         "price": 45.00,
         "description": "Stay warm and show your love for Angular with this cozy hoodie.",
         "category": "Apparel",
-        "image": "https://placehold.co/150/dd1b16/ffffff?text=Angular"
+        "image": "https://placehold.co/150/dd1b16/ffffff?text=Angular",
+        "image_full": "https://placehold.co/700/dd1b16/ffffff?text=Angular"
     },
     {
         "id": 4,
@@ -30,7 +33,8 @@
         "price": 5.00,
         "description": "Decorate your laptop with these high-quality JavaScript stickers.",
         "category": "Accessories",
-        "image": "https://placehold.co/150/f0db4f/000000?text=JS"
+        "image": "https://placehold.co/150/f0db4f/000000?text=JS",
+        "image_full": "https://placehold.co/700/f0db4f/000000?text=JS"
     },
     {
         "id": 5,
@@ -38,7 +42,8 @@
         "price": 20.00,
         "description": "Stay hydrated while coding with this Node.js branded water bottle.",
         "category": "Accessories",
-        "image": "https://placehold.co/150/68a063/ffffff?text=Node"
+        "image": "https://placehold.co/150/68a063/ffffff?text=Node",
+        "image_full": "https://placehold.co/700/68a063/ffffff?text=Node"
     },
     {
         "id": 6,
@@ -46,7 +51,8 @@
         "price": 18.75,
         "description": "A stylish cap to show your appreciation for the magic of CSS.",
         "category": "Apparel",
-        "image": "https://placehold.co/150/2965f1/ffffff?text=CSS"
+        "image": "https://placehold.co/150/2965f1/ffffff?text=CSS",
+        "image_full": "https://placehold.co/700/2965f1/ffffff?text=CSS"
     }
 ]
 }
