@@ -1,6 +1,7 @@
 import {CartContext} from "./CartContext.js";
 import {useContext, useEffect, useReducer, useState} from "react";
 import axios from "axios";
+import localforage from "localforage";
 
 export const CartProvider = ({ children }) => {
     const initialState = {
@@ -9,6 +10,11 @@ export const CartProvider = ({ children }) => {
 
     const cartReducer = (state = initialState, action) => {
         switch (action.type) {
+            case 'INIT_CART':
+                return {
+                    ...state,
+                    cartItems: action.payload
+                }
             case 'ADD_ITEM':
                 // Obtener el producto a agregar
                 const newProduct = action.payload;
@@ -96,6 +102,14 @@ export const CartProvider = ({ children }) => {
         }
 
         fetchProducts();
+    }, [])
+
+    useEffect(() => {
+        const loadCart = async () => {
+            const cart = await localforage.getItem("cart")
+            if (cart) dispatch({type: 'INIT_CART', payload: cart})
+        }
+        loadCart();
     }, [])
 
     return (
