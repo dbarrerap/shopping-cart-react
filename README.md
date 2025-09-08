@@ -9,6 +9,7 @@ La aplicación muestra una lista de productos que los usuarios pueden agregar a 
 ## Características
 
 -   **Listado de Productos**: Muestra una lista de productos con su nombre, descripción y precio.
+-   **Detalle del Producto**: Muestra una vista detallada de un producto seleccionado.
 -   **Carrito de Compras**: Funcionalidad completa de carrito de compras.
     -   Agregar productos al carrito.
     -   Aumentar/disminuir la cantidad de productos en el carrito.
@@ -16,6 +17,7 @@ La aplicación muestra una lista de productos que los usuarios pueden agregar a 
     -   Vaciar todo el carrito.
 -   **Manejo de Estado Global**: Utiliza `useContext` y `useReducer` para un manejo de estado centralizado y eficiente.
 -   **Interfaz Responsiva**: Construida con Bootstrap para una experiencia de usuario consistente en diferentes dispositivos.
+-   **Enrutamiento**: Utiliza `react-router-dom` para la navegación entre la lista de productos y la vista de detalle del producto.
 
 ## Tecnologías Utilizadas
 
@@ -23,6 +25,7 @@ La aplicación muestra una lista de productos que los usuarios pueden agregar a 
 -   **Vite**: Herramienta de construcción y servidor de desarrollo.
 -   **Bootstrap (v5.3.7)**: Framework de CSS para el diseño y la interfaz de usuario.
 -   **React Icons (v5.5.0)**: Para la inclusión de iconos SVG.
+-   **React Router DOM (v7.8.2)**: Para el manejo de rutas en la aplicación.
 -   **ESLint**: Para el linting y la calidad del código.
 
 ## Estructura del Proyecto
@@ -38,6 +41,7 @@ El proyecto sigue una estructura de carpetas modular y organizada para promover 
 │    │    ├─── Cart.jsx
 │    │    ├─── CartItem.jsx
 │    │    ├─── Header.jsx
+│    │    ├─── ProductDetail.jsx
 │    │    ├─── ProductItem.jsx
 │    │    ├─── ProductList.jsx
 │    │    └─── index.js
@@ -61,6 +65,13 @@ El núcleo de la lógica de la aplicación reside en el `CartProvider.jsx`, que 
     -   `DECREASE_ITEM`: Disminuye la cantidad de un artículo o lo elimina si la cantidad es 1.
     -   `RESET_CART`: Vacía todos los artículos del carrito.
 -   **`CartContext`**: Proporciona el `estado` del carrito y la función `dispatch` a todos los componentes que lo necesiten, evitando el "prop drilling".
+
+## Enrutamiento
+
+La aplicación utiliza `react-router-dom` para gestionar la navegación. Las rutas principales son:
+
+-   `/`: Muestra la lista de productos (`ProductList`).
+-   `/product/:id`: Muestra la vista de detalle de un producto específico (`ProductDetail`).
 
 ## Instalación y Uso
 
