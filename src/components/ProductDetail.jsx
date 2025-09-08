@@ -1,5 +1,6 @@
 import {Link, useParams} from "react-router-dom";
 import {useCart} from "../contexts/CartProvider.jsx";
+import { FaCartPlus } from "react-icons/fa6"
 
 export const ProductDetail = () => {
     const {id} = useParams();
@@ -32,11 +33,13 @@ export const ProductDetail = () => {
                 <div className="card">
                     <div className="card-header">
                         <div className="row">
-                            <div className="col-12 col-md-6">
+                            <div className="col-12 col-md-9">
                                 <h3 className="card-title">{product.name}</h3>
                             </div>
-                            <div className="col-12 col-md-6">
-                                <button className="btn btn-primary" onClick={handleAddToCart}>Agregar al Carrito</button>
+                            <div className="col-12 col-md-3">
+                                <button className="btn btn-sm btn-primary" onClick={handleAddToCart}>
+                                    <FaCartPlus size={20} />
+                                </button>
                             </div>
                         </div>
 
