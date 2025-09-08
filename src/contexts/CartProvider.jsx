@@ -112,6 +112,10 @@ export const CartProvider = ({ children }) => {
         loadCart();
     }, [])
 
+    useEffect(() => {
+        localforage.setItem("cart", state.cartItems);
+    }, [state.cartItems]);
+
     return (
         <CartContext.Provider value={{state, dispatch, products, isLoading, hasError}}>
             {children}
