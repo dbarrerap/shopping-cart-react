@@ -59,6 +59,11 @@ export const CartProvider = ({ children }) => {
                 if (productToDecrease.quantity === 1) {
                     // Remover el Item
                     const updatedCartItems = state.cartItems.filter(item => item.id !== productToDecrease.id);
+
+                    if (updatedCartItems.length === 0) {
+                        localforage.removeItem('cart')
+                    }
+
                     return {
                         ...state,
                         cartItems: updatedCartItems,
@@ -75,6 +80,7 @@ export const CartProvider = ({ children }) => {
                     };
                 }
             case 'RESET_CART':
+                localforage.removeItem('cart')
                 return {
                     ...state,
                     cartItems: [],
