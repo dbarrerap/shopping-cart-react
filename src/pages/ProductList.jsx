@@ -1,4 +1,4 @@
-import {ProductItem} from "./ProductItem.jsx";
+import {ProductItem} from "../components";
 import {useCart} from "../contexts/CartProvider.jsx";
 
 export const ProductList = () => {

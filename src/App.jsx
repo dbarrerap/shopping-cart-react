@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 
-import {Header, ProductList} from './components'
+import {Header} from './components'
 import {Route, Routes} from "react-router-dom";
-import {ProductDetail} from "./components/ProductDetail.jsx";
+import { ProductList, ProductDetail } from './pages'
 
 function App() {
 
