@@ -1,6 +1,7 @@
 import {CartItem} from "./CartItem.jsx";
-import { FaTrashCan } from 'react-icons/fa6'
+import { FaTrashCan, FaCreditCard } from 'react-icons/fa6'
 import {useCart} from "../contexts/CartProvider.jsx";
+import {Link} from "react-router-dom";
 
 export const Cart = () => {
     const {state, dispatch} = useCart()
@@ -17,10 +18,19 @@ export const Cart = () => {
                     </li>
                 )}
             </div>
-            <button className="btn btn-sm btn-danger d-flex align-items-center mt-3" onClick={()=>dispatch({type: 'RESET_CART'})}>
-                <FaTrashCan size={14} />
-                Limpiar
-            </button>
+            {state.cartItems.length > 0 && (
+                <div className="d-flex justify-content-between mt-3">
+                    <button className="btn btn-sm btn-danger d-flex align-items-center" onClick={()=>dispatch({type: 'RESET_CART'})}>
+                        <FaTrashCan className="me-2" />
+                        Limpiar
+                    </button>
+                    <Link to="/checkout" className="btn btn-sm btn-primary">
+                        <FaCreditCard className="me-2" />
+                        Ir a Pagar
+                    </Link>
+                </div>
+            )}
+
         </>
     );
 };
