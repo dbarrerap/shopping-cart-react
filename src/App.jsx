@@ -3,7 +3,7 @@ import './App.css'
 
 import {Header} from './components'
 import {Route, Routes} from "react-router-dom";
-import { ProductList, ProductDetail } from './pages'
+import { ProductList, ProductDetail, CheckoutPage } from './pages'
 
 function App() {
 
@@ -14,6 +14,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<ProductList />} />
                 <Route path="/product/:id" element={<ProductDetail />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
             </Routes>
         </div>
     </>
