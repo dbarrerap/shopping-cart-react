@@ -15,9 +15,11 @@ La aplicación muestra una lista de productos que los usuarios pueden agregar a 
     -   Aumentar/disminuir la cantidad de productos en el carrito.
     -   Eliminar productos del carrito (al disminuir la cantidad a cero).
     -   Vaciar todo el carrito.
+-   **Persistencia del Carrito**: El estado del carrito se guarda localmente usando `localforage`, permitiendo que persista entre sesiones.
+-   **Página de Checkout**: Una página de resumen del pedido accesible desde el carrito.
 -   **Manejo de Estado Global**: Utiliza `useContext` y `useReducer` para un manejo de estado centralizado y eficiente.
 -   **Interfaz Responsiva**: Construida con Bootstrap para una experiencia de usuario consistente en diferentes dispositivos.
--   **Enrutamiento**: Utiliza `react-router-dom` para la navegación entre la lista de productos y la vista de detalle del producto.
+-   **Enrutamiento**: Utiliza `react-router-dom` para la navegación entre las distintas páginas.
 
 ## Tecnologías Utilizadas
 
@@ -26,11 +28,12 @@ La aplicación muestra una lista de productos que los usuarios pueden agregar a 
 -   **Bootstrap (v5.3.7)**: Framework de CSS para el diseño y la interfaz de usuario.
 -   **React Icons (v5.5.0)**: Para la inclusión de iconos SVG.
 -   **React Router DOM (v7.8.2)**: Para el manejo de rutas en la aplicación.
+-   **LocalForage**: Para el almacenamiento offline del carrito.
 -   **ESLint**: Para el linting y la calidad del código.
 
 ## Estructura del Proyecto
 
-El proyecto sigue una estructura de carpetas modular y organizada para promover la mantenibilidad y escalabilidad.
+El proyecto sigue una estructura de carpetas modular y organizada para promover la mantenibilidad y escalabilidad, separando componentes reutilizables de las páginas principales.
 
 ```
 /
@@ -41,13 +44,14 @@ El proyecto sigue una estructura de carpetas modular y organizada para promover 
 │    │    ├─── Cart.jsx
 │    │    ├─── CartItem.jsx
 │    │    ├─── Header.jsx
-│    │    ├─── ProductDetail.jsx
-│    │    ├─── ProductItem.jsx
-│    │    ├─── ProductList.jsx
-│    │    └─── index.js
+│    │    └─── ProductItem.jsx
 │    ├─── contexts/
 │    │    ├─── CartContext.js
 │    │    └─── CartProvider.jsx
+│    ├─── pages/
+│    │    ├─── CheckoutPage.jsx
+│    │    ├─── ProductDetail.jsx
+│    │    └─── ProductList.jsx
 │    ├─── data.json
 │    ├─── App.jsx
 │    ├─── main.jsx
@@ -65,6 +69,7 @@ El núcleo de la lógica de la aplicación reside en el `CartProvider.jsx`, que 
     -   `DECREASE_ITEM`: Disminuye la cantidad de un artículo o lo elimina si la cantidad es 1.
     -   `RESET_CART`: Vacía todos los artículos del carrito.
 -   **`CartContext`**: Proporciona el `estado` del carrito y la función `dispatch` a todos los componentes que lo necesiten, evitando el "prop drilling".
+-   **Persistencia con `localforage`**: El estado del carrito se sincroniza con el almacenamiento del navegador en cada cambio, y se carga al iniciar la aplicación para una experiencia de usuario persistente.
 
 ## Enrutamiento
 
@@ -72,6 +77,7 @@ La aplicación utiliza `react-router-dom` para gestionar la navegación. Las rut
 
 -   `/`: Muestra la lista de productos (`ProductList`).
 -   `/product/:id`: Muestra la vista de detalle de un producto específico (`ProductDetail`).
+-   `/checkout`: Muestra la página de resumen del pedido y pago (`CheckoutPage`).
 
 ## Instalación y Uso
 
